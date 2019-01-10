@@ -12,6 +12,7 @@ zinput_mode='emacs'
 #语法高亮
 zhighlighters=(main brackets cursor)
 EOF
+mv ~/.zshrc ~/.local/yourzshrc
 cat > ~/.zshrc <<EOF
 export ZIM_HOME=\${PREFIX}/share/zimfw
 #启用zim
@@ -23,14 +24,16 @@ function INSTALL() {
 pkg in git zsh curl -y
 rm -rf ${PREFIX}/share/zimfw 2> /dev/null
 git clone --recursive https://github.com/zimfw/zimfw.git \
-	${PREFIX}/share/zimfw
-cd ${HOME}
-curl -o style.tar.gz \
-	https://raw.githubusercontent.com/myfreess/oh-my-termux/master/style.tar.gz
+    ${PREFIX}/share/zimfw
+#stylepac
 tar -xzf style.tar.gz
+#backup
+mv ~/.termux ~/.local/termux
+#enable
+mv $PWD/.termux ~/.termux
 $HOME/.termux/colors.sh
 $HOME/.termux/fonts.sh
-[ -f ~/style.tar.gz ]&&rm ~/style.tar.gz
+[ -d $PWD/.termux ]&&rm $PWD/.termux
 chsh -s zsh	
 }
 
