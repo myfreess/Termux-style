@@ -1,7 +1,4 @@
-Neo zsh configure script
-
-
-
+![Tzim](https://github.com/myfreess/Tzim/blob/master/zsh.png)
 Install:
 
 ```shell
