@@ -1,5 +1,8 @@
 ![Tzim](https://github.com/myfreess/Tzim/blob/master/zsh.png)
-Install:
+
+Thanks:https://github.com/Cabbagec/termux-ohmyzsh
+
+**install**
 
 ```shell
 pkg in git make -y
